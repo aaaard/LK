@@ -2,7 +2,6 @@ package com.example.lkard.lk;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -10,9 +9,6 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-/**
- * Created by LKARD on 12.05.2016.
- */
 public class MainActivity extends Activity {
     Long rez;
     Integer znak;
@@ -55,11 +51,11 @@ public class MainActivity extends Activity {
         Random r = new Random();
         Integer x ;
         Integer y ;
-        x = r.nextInt(1000000);
-        y = r.nextInt(1000000);
+        x = r.nextInt(100000);
+        y = r.nextInt(100000);
         if(x<y){
             Integer buf = x;
-            x=y;
+            x = y;
             y=buf;
         }
 
@@ -67,17 +63,17 @@ public class MainActivity extends Activity {
         switch (znak){
             case 0:
                 tv_znak.setText("+");
-                rez = new Long(x + y);
+                rez = (long) (x + y);
                 break;
             case 1:
                 tv_znak.setText("-");
-                rez = new Long(x - y);
+                rez = (long) (x - y);
                 break;
             case 2:
                 x = r.nextInt(10000)+1;
                 y = r.nextInt(10000)+1;
                 tv_znak.setText("*");
-                rez = new Long(x * y);
+                rez =(long)(x * y);
                 break;
         }
         number1.setText(x.toString());
